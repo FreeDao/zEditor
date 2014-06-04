@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+.Z-Code-Editor::-webkit-scrollbar{
+	width: 10px;
+	height: 10px;
+}
+.Z-Code-Editor::-webkit-scrollbar-track-piece{
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(0%,rgba(76,76,76,1)),
+		color-stop(0%,rgba(89,89,89,1)),
+		color-stop(0%,rgba(102,102,102,1)),
+		color-stop(0%,rgba(71,71,71,1)),
+		color-stop(0%,rgba(0,0,0,1)),
+		color-stop(28%,rgba(17,17,17,1)),
+		color-stop(69%,rgba(43,43,43,1)),
+		color-stop(100%,rgba(28,28,28,1)),
+		color-stop(100%,rgba(19,19,19,1))
+	);
+}
+.Z-Code-Editor::-webkit-scrollbar-thumb:vertical{
+	border: 1px solid #090909;
+	background: #333;
+	border-radius: 5px;
+}
+
+.Z-Code-Editor{
+	position: relative;
+	width: 100%;
+	height: 92%;
+	padding: 2% 0;
+	background: #272822;
+	color: #bbb;
+	font: normal 14px/1.5 'Consolas', Arial, sans-serif, \5FAE\8F6F\96C5\9ED1, \5b8b\4f53;
+	word-break: break-all;
+	overflow-y: scroll;
+	-moz-user-select: none;
+}
+.z-gutter-wrap{
+	width: 50px;
+	min-height: 100%;
+	border-right: 1px dashed #3b3c33;
+	float: left;
+}
+.z-gutter{
+	text-align: right;
+	color: #8f908a;
+	cursor: default;
+}
+.z-gutter li{
+	padding-right: 10px;
+}
+.z-gutter .cur{
+	background: #3e3d32;
+}
+.z-content-wrap{
+	position: relative;
+	min-height: 100%;
+	margin-left: 60px;
+	cursor: text;
+}
+.z-content{
+	position: relative;
+	z-index: 999;
+	min-height: 400px;
+	font-size: 0;
+}
+.z-content p{
+	margin: 0;
+	padding: 0;
+	min-height: 21px;
+	font-size: 14px;
+}
+.z-content span{
+	display: inline-block;
+	vertical-align: top;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+.z-textarea{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 1001;
+	width: 1px;
+	height: 20px;
+	overflow: hidden;
+	background: none;
+	border: none;
+	outline: none;
+	resize: none;
+	opacity: 0;
+}
+.z-cursor{
+	position: absolute;
+	left: -9999px;
+	top: -9999px;
+	z-index: 1000;
+	width: 0;
+	height: 20px;
+	border-left: 2px solid #bbb;
+}
+
+.z-selection{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	z-index: 998;
+	width: 100%;
+}
+.z-selection .selection{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 21px;
+	background: #fff;
+	opacity: 0.2;
+}
